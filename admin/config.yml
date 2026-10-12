@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: ByCntrl/bycntrl-site
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    file: "events.json"
+    description: "All past and upcoming +CNTRL Creative events"
+    fields:
+      - name: "events"
+        label: "Events"
+        widget: "list"
+        summary: "{{fields.name}} — {{fields.date}}"
+        fields:
+          - { label: "Event ID", name: "id", widget: "string", hint: "URL-safe slug, e.g. in-full-bloom" }
+          - { label: "Event Name", name: "name", widget: "string" }
+          - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+          - { label: "Venue", name: "venue", widget: "string" }
+          - { label: "Location", name: "location", widget: "string", hint: "e.g. Ybor City, Tampa, FL" }
+          - { label: "Tags", name: "tags", widget: "string", hint: "e.g. Fashion Show · Culture" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Thumbnail URL", name: "thumbnail", widget: "string", required: false, hint: "Cloudinary URL or leave blank" }
+          - { label: "Gallery Photos Ready?", name: "hasGallery", widget: "boolean", default: false }
