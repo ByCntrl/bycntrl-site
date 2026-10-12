@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "id": "headshots-hustle",
+      "name": "HEADSHOTS & HUSTLE",
+      "date": "2024-02-01",
+      "venue": "The Hub",
+      "location": "Tampa, FL",
+      "tags": "Networking · Creative Professionals",
+      "description": "Tampa's creatives came out to build community, sharpen their brands, and network with like-minded professionals. Headshots on-site, good energy all around.",
+      "thumbnail": "",
+      "hasGallery": true
+    },
+    {
+      "id": "in-full-bloom",
+      "name": "IN FULL BLOOM",
+      "date": "2024-04-14",
+      "venue": "Geo's Lounge",
+      "location": "Ybor City, Tampa, FL",
+      "tags": "Fashion Show · Evolution of Fashion",
+      "description": "Tampa's creative scene came alive in full color. Designers, models, and culture-makers took over Ybor City for a night that pushed fashion forward and proved the city has its own lane.",
+      "thumbnail": "",
+      "hasGallery": false
+    }
+  ]
+}
