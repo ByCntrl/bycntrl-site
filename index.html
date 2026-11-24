@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>+CNTRL Creative</title>
+<meta name="description" content="+CNTRL is a culture brokerage. Marketing with access. Founded by Tyler Mills, culture broker, in Tampa Bay, Miami, Atlanta and New York.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE  occasion: a bold, everyday agency site, confident and friendly, Tyler as the face
+   IDEA   the +CNTRL pitch deck come to life: white pages, heavy black type, red as the signature
+   PICTURE a full-height red field holding Tyler's portrait and a giant cut-out plus sign
+   COLOUR white and warm stone, black ink; red #E8000D only as a tiny accent (the plus, a rule)
+   TYPE   Anton display + Poppins text, matching the deck
+   LAYOUT laptop: headline left, red portrait field right; phone: headline, portrait, buttons */
+:root,:root[data-theme=light],:root[data-theme=dark]{color-scheme:light;--bg:#ffffff;--ink:#111111;--soft:#f5f3f0;--line:#e2ded8;--mute:#555555;--red:#E8000D;--redink:#c4000b}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Poppins,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(34px,4.4vw,50px)}
+h3{font-size:24px}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(48px,7vw,104px);padding-inline:max(5vw,16px)}
+.logo{font-family:Anton,Impact,sans-serif;font-size:28px;text-decoration:none;letter-spacing:.01em}
+.logo b{color:var(--red);font-weight:400}
+.logo img{display:block;height:30px;width:auto}
+.foot .flogo{display:block;width:min(360px,70vw);height:auto;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);font:600 15px Poppins,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:#111;border-color:#111;color:#fff}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;padding:12px max(5vw,16px);max-width:1340px;margin:0 auto}
+.nav nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-weight:500;font-size:15px;padding:8px 0}
+.nav nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--red)}
+.nav .btn{min-height:44px;padding:0 18px}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);min-height:min(80svh,760px);border-bottom:1px solid var(--line)}
+.hero-copy{max-width:1340px;margin:0 auto;width:100%}
+.hero-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px 64px;align-items:end;border-top:1px solid var(--ink);padding-top:28px}
+.hero-row>div{display:grid;gap:24px}
+.hero-row .by{text-align:right}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;gap:28px;padding:clamp(40px,6vw,88px) max(5vw,16px)}
+.hero h1{font-size:clamp(72px,14vw,220px);line-height:.88}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);max-width:34em}
+.hero .by{color:var(--mute);font-size:15px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.field{position:relative;background:var(--soft);overflow:hidden;display:grid;place-items:center;padding:48px 24px}
+.field svg.plus{position:absolute;width:26px;right:32px;top:32px}
+.frame{position:relative;width:min(380px,80%);aspect-ratio:4/5;background:#ece9e4;border:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.frame svg{position:absolute;inset:0;width:100%;height:100%}
+.frame span{position:relative;color:#444;font-size:13px;padding:14px 16px;background:linear-gradient(transparent,rgba(255,255,255,.85))}
+.tag{position:absolute;left:max(5vw,24px);bottom:32px;color:#111;font:500 14px Poppins,sans-serif;border-top:1px solid #111;padding-top:10px}
+/* ticker */
+.ticker{display:none;background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0}
+.ticker div{display:inline-flex;gap:40px;padding-right:40px;animation:run 32s linear infinite;font-family:Anton,Impact,sans-serif;font-size:22px}
+.ticker i{color:#111;font-style:normal}
+@keyframes run{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none}html{scroll-behavior:auto}}
+/* press */
+.press{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center;justify-content:space-between;padding-block:28px;border-bottom:1px solid var(--line)}
+.press p{color:var(--mute);font-size:15px}
+.press ul a{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px;text-decoration-thickness:2px}
+.press ul a:hover{color:var(--redink)}
+.press li.multi a{display:inline-grid;place-items:center;width:28px;height:28px;margin-left:6px;border:1.5px solid var(--red);border-radius:50%;font:600 13px Poppins,sans-serif;text-decoration:none;vertical-align:middle;color:var(--ink)}
+.press li.multi a:hover{background:var(--red);color:#fff}
+.press ul{display:flex;flex-wrap:wrap;gap:12px 36px;list-style:none;margin:0;padding:0;font-family:Anton,Impact,sans-serif;font-size:22px}
+/* section heads */
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:48px}
+.head p{color:var(--mute);font-size:17px;max-width:36em}
+/* services */
+.feat{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.2fr) auto;gap:16px 32px;align-items:center;padding:28px 0;border-top:1px solid var(--ink)}
+.feat svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.feat p{color:var(--mute)}
+.feat .btn{min-height:44px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+.svc{padding:30px 24px 34px 0;border-bottom:1px solid var(--line);display:grid;gap:14px;align-content:start}
+.svc:not(:nth-child(4n+1)){padding-left:24px;border-left:1px solid var(--line)}
+.svc svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc p{color:var(--mute)}
+.svc .price{color:var(--ink);font-weight:600}
+/* DAR */
+.dar{background:var(--soft)}
+.dar-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.step{background:var(--bg);padding:32px 28px;display:grid;gap:12px;align-content:start}
+.step .L{font-family:Anton,Impact,sans-serif;font-size:clamp(88px,10vw,128px);line-height:.9;color:var(--red)}
+.step h3{font-size:30px}
+.step p{color:var(--mute)}
+.dar-foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;margin-top:32px}
+.dar-foot p{font-size:17px;max-width:40em}
+/* work */
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:1px solid var(--ink)}
+.job{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding:26px 0;border-bottom:1px solid var(--line)}
+.job h3{font-size:26px}
+.job p{color:var(--mute);grid-column:1}
+.job em{font-style:normal;font-size:13px;font-weight:500;color:var(--redink);border:1px solid currentColor;padding:4px 10px;align-self:start;white-space:nowrap;grid-row:1}
+.steps{list-style:none;margin:0 0 36px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+.steps li{display:grid;gap:4px;align-content:start;padding:18px 20px 0 0}
+.steps li+li{padding-left:20px;border-left:1px solid var(--line)}
+.steps b{font-size:13px;font-weight:600;color:var(--redink)}
+.steps span{font-weight:600;font-size:17px}
+.steps small{color:var(--mute);font-size:14px;line-height:1.5}
+/* portfolio */
+.port{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 28px}
+.pc{display:grid;gap:12px;align-content:start;grid-template-rows:auto;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.cover{position:relative;aspect-ratio:4/3;background:var(--soft);overflow:hidden;display:grid;place-items:center}
+.cover svg{width:44px;height:44px;stroke:#b9b3ab;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s}
+.cover .count{position:absolute;right:12px;bottom:12px;background:#fff;font-size:13px;font-weight:500;padding:5px 10px}
+.pc:hover .cover svg{transform:scale(1.12)}
+.linkcard .count{background:var(--red);color:#fff}
+.pc.soon{text-decoration:none}
+.pc.soon .cover{background:var(--red)}
+.pc.soon .big{font-family:Anton,Impact,sans-serif;font-size:clamp(56px,8vw,110px);color:#fff}
+.pc.soon .count{background:#111;color:#fff}
+.cover.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+a.pc{text-decoration:none}
+.vidcard .cover{background:radial-gradient(circle at 30% 20%,#3a0d0f 0,#111 60%)}
+.vidcard .thumb{position:absolute;left:18px;top:16px;right:18px;display:grid;gap:2px}
+.vidcard .t1{font-family:Anton,Impact,sans-serif;font-size:clamp(34px,4vw,48px);line-height:.95;color:#fff;text-transform:uppercase}
+.vidcard .t2{color:#cfcac3;font-size:14px;font-weight:500}
+.vidcard .pb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:transform .3s}
+.vidcard .pb svg{width:28px;height:28px;fill:#fff;stroke:none;margin-left:4px}
+.vidcard:hover .pb{transform:translate(-50%,-50%) scale(1.1)}
+
+.pc .kind{font-size:13px;font-weight:500;color:var(--redink)}
+.pc h3{font-size:26px}
+.pc p{color:var(--mute);font-size:15px}
+.pc .open{font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--red)}
+dialog{width:min(1100px,94vw);max-height:90vh;border:0;padding:0;background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:rgba(10,10,10,.75)}
+.dl-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;padding:28px 28px 8px}
+.dl-head h3{font-size:clamp(28px,4vw,44px)}
+.dl-head p{color:var(--mute);margin-top:8px;max-width:44em}
+.x{flex:none;width:44px;height:44px;border:1px solid var(--line);background:var(--bg);font-size:22px;cursor:pointer;color:var(--ink)}
+.album{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:20px 28px 28px}
+.album div{aspect-ratio:1;background:var(--soft);display:grid;place-items:center;font-size:13px;color:var(--mute);text-align:center;padding:10px}
+.album div:first-child{grid-column:span 2;grid-row:span 2}
+.album div.vd,.album div.vd:first-child{grid-column:span 1;grid-row:auto;aspect-ratio:9/16;min-height:0}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pc:hover .cover img{transform:scale(1.04)}
+.album .vd{padding:0;position:relative;overflow:hidden;background:#000}
+.album .vd video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.album .ph{padding:0;position:relative;overflow:hidden}
+.album .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#lb{width:100vw;height:100svh;max-width:none;max-height:none;margin:0;padding:0;background:#0d0d0d;border:0}
+#lb::backdrop{background:#0d0d0d}
+#lb img{position:absolute;inset:56px 72px;width:calc(100% - 144px);height:calc(100% - 112px);object-fit:contain;user-select:none}
+.lbb{position:absolute;width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:32px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lbb:hover{background:var(--red)}
+.lbb.prev{left:12px;top:50%;transform:translateY(-50%)}
+.lbb.next{right:12px;top:50%;transform:translateY(-50%)}
+.lbb.x2{right:12px;top:12px;font-size:28px}
+.lbc{position:absolute;left:0;right:0;bottom:14px;text-align:center;color:#bbb;font-size:14px;margin:0}
+.album .ph{cursor:zoom-in}
+@media(max-width:600px){#lb img{inset:56px 8px;width:calc(100% - 16px)}.lbb.prev,.lbb.next{top:auto;bottom:8px;transform:none}.lbc{bottom:24px}}
+.album svg{width:30px;height:30px;stroke:#b9b3ab;fill:none;stroke-width:1.5;display:block;margin:0 auto 6px}
+/* intro doors */
+.intro{position:fixed;inset:0;z-index:100;background:#0d0d0d;overflow:hidden;transition:opacity 1s .35s}
+.iv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.6,0,.2,1)}
+.ishade{position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(0,0,0,.55))}
+.icopy{position:relative;height:100%;display:grid;align-content:end;justify-items:center;padding:24px 24px clamp(40px,10vh,96px);transition:opacity .5s}
+.icopy img{width:min(640px,80vw);height:auto;filter:drop-shadow(0 4px 24px rgba(0,0,0,.5))}
+.intro .enter{display:grid;justify-items:center;gap:10px;background:none;border:0;cursor:pointer;font:500 15px Poppins,sans-serif;color:#fff}
+.intro .enter i{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-size:26px;box-shadow:0 0 0 0 rgba(232,0,13,.5);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 18px rgba(232,0,13,0)}100%{box-shadow:0 0 0 0 rgba(232,0,13,0)}}
+.intro.open{opacity:0;pointer-events:none}
+.intro.open .iv{transform:scale(1.45)}
+.intro.open .icopy{opacity:0}
+.intro.gone{display:none}
+body.locked{overflow:hidden}
+.hero-copy>*{transition:opacity .8s .5s,transform .8s .5s}
+body.locked .hero-copy>*{opacity:0;transform:translateY(24px)}
+@media(prefers-reduced-motion:reduce){.iv,.hero-copy>*{transition:opacity .3s}.intro.open .iv{transform:none}.intro .enter i{animation:none}}
+.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* fit */
+.fitband{border-top:1px solid var(--line)}
+.fit{display:grid;grid-template-columns:minmax(0,1fr);gap:36px}
+.fit h2{font-size:clamp(52px,8vw,112px);line-height:.9}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:3px solid var(--ink)}
+.fit li{display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding:22px 0;font-family:Anton,Impact,sans-serif;font-size:clamp(22px,2.4vw,30px);line-height:1.15}
+.fit li svg{flex:none;width:28px;height:28px;margin-top:2px;stroke:var(--red);fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+/* event band */
+.hustle{background:var(--soft);color:#111;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hustle-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px 64px;align-items:center}
+.hustle h2{font-size:clamp(48px,7vw,96px)}
+.hustle h2 span{display:block}
+.hustle p{color:#555;font-size:17px;max-width:34em;margin-top:20px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.facts b{border:1px solid #cfcac3;padding:8px 14px;font-weight:500;font-size:15px}
+.card{background:#fff;color:#111;border:1px solid var(--line);padding:32px;display:grid;gap:14px}
+.card h3{font-size:30px}
+/* forms */
+label{font-weight:600;font-size:14px;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;font:16px Poppins,sans-serif;padding:13px 14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:0}
+.hustle .card p{color:#555}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red)}
+textarea{min-height:130px;resize:vertical}
+.msg{font-size:14px;min-height:1.4em;color:var(--redink)}
+.hustle .msg{color:#c4000b}
+.hidden{position:absolute;left:-9999px}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px 72px;align-items:center}
+.about .frame{width:100%;max-width:440px}
+.about-copy{display:grid;gap:20px}
+.about-copy p{font-size:17px;max-width:38em}
+.about-copy .mute{color:var(--mute)}
+.family{display:flex;flex-wrap:wrap;gap:10px}
+.family span{background:var(--soft);padding:8px 14px;font-weight:500;font-size:15px}
+.quick{list-style:none;margin:4px 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.quick li{border-top:1px solid var(--line);padding:12px 0;font-weight:500;display:grid}
+.quick b{font-size:13px;font-weight:500;color:var(--mute)}
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 72px;align-items:start}
+.contact dl{display:grid;gap:18px;margin:32px 0 0}
+.contact dt{font-size:14px;color:var(--mute)}
+.contact dd{margin:2px 0 0;font-weight:600;font-size:18px}
+form.main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+form.main .full{grid-column:1/-1}
+/* footer */
+footer{border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center}
+.foot .sign{font-family:Anton,Impact,sans-serif;font-size:clamp(40px,6vw,72px);line-height:1}
+.foot .sign span{color:var(--ink)}
+.foot small{color:var(--mute);font-size:14px;display:block;margin-top:8px}
+.foot nav{display:flex;flex-wrap:wrap;gap:12px 24px}
+.foot nav a{text-decoration:none;font-weight:500}
+.foot nav a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--red)}
+@media(max-width:960px){
+.port{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hero{grid-template-columns:minmax(0,1fr);min-height:0}
+.field{min-height:480px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.svc:nth-child(n){padding:28px 24px 32px 0;border-left:0}
+.svc:nth-child(2n){padding-left:24px;border-left:1px solid var(--line)}
+.fit,.hustle-in,.about,.contact{grid-template-columns:minmax(0,1fr)}
+.about .frame{max-width:360px}
+}
+@media(max-width:760px){
+.hero-row{grid-template-columns:minmax(0,1fr)}
+.hero-row .by{text-align:left}
+.steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px}
+.steps li:nth-child(3){padding-left:0;border-left:0}
+.feat{grid-template-columns:auto minmax(0,1fr)}
+.feat p,.feat .btn{grid-column:1/-1;justify-self:start}
+.nav{flex-wrap:wrap;gap:10px 16px}
+.nav nav{order:3;width:100%;margin-left:0;gap:4px 18px}
+.nav .btn{margin-left:auto}
+.head{grid-template-columns:minmax(0,1fr)}
+.dar-row,.work,.fit ul{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:600px){
+.pc.soon{grid-column:auto}
+.pc.soon .cover{aspect-ratio:4/3}
+.port{grid-template-columns:minmax(0,1fr)}
+.album{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px}
+.dl-head{padding:20px 16px 4px}
+.grid{grid-template-columns:minmax(0,1fr)}
+.svc:nth-child(n){padding:26px 0;border-left:0}
+form.main{grid-template-columns:minmax(0,1fr)}
+.field{min-height:420px}
+.job{grid-template-columns:minmax(0,1fr)}
+.job em{grid-row:auto;justify-self:start}
+}
+
+.album-demo{padding:20px 28px 28px}
+.demo-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px;align-items:start}
+.demo-wrap video{width:100%;height:auto;display:block;background:#000;border:1px solid var(--line)}
+.demo-wrap h4{font:600 13px Poppins,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--redink);margin:0 0 12px}
+.demo-wrap ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px}
+.demo-wrap li{display:grid;grid-template-columns:22px 1fr;gap:10px;line-height:1.45;color:var(--ink)}
+.demo-wrap li svg{width:20px;height:20px;stroke:var(--red);fill:none;stroke-width:2;margin-top:2px}
+.demo-wrap li b{font-weight:600}
+.demo-wrap .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.demo-wrap .stats div{border:1px solid var(--line);padding:12px}
+.demo-wrap .stats b{display:block;font:600 15px Poppins,sans-serif}
+.demo-wrap .stats span{font-size:13px;color:var(--mute)}
+.demo-wrap .btn{margin-top:4px}
+@media(max-width:820px){.demo-wrap{grid-template-columns:1fr}}
+
+.album a.rl{grid-column:span 2;grid-row:auto;aspect-ratio:auto;min-height:260px;position:relative;overflow:hidden;display:block;background:#000;color:#fff;text-decoration:none}
+.album a.rl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.album a.rl:hover img{transform:scale(1.04)}
+.album a.rl .pb{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.album a.rl .pb svg{width:28px;height:28px;fill:#fff}
+.album a.rl .rlc{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:14px;text-align:left}
+.album a.rl .rlc b{display:block;font:600 20px Poppins,sans-serif;margin-bottom:2px}
+.album a.rl ~ div:first-of-type{grid-column:auto;grid-row:auto}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-label="Welcome to +CNTRL">
+  <video class="iv" id="introVid" autoplay muted loop playsinline preload="auto" poster="assets/cntrl-door-poster.jpg" src="assets/cntrl-door.mp4"></video>
+  <div class="ishade"></div>
+  <div class="icopy">
+    <button class="enter" id="enter" type="button"><i>&rarr;</i>Step inside</button>
+  </div>
+</div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#top"><img src="assets/cntrl-wordmark.png" alt="+CNTRL" width="900" height="165"></a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#dar">The DAR Method</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#hustle">Events</a>
+      <a href="#about">About Tyler</a>
+    </nav>
+    <a class="btn red" href="#contact">Book your brand therapy</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Marketing with access.</h1>
+    <div class="hero-row"><div>
+    <p class="lead">+CNTRL is a culture brokerage. We connect brands with the people, rooms and moments that move them, then build the systems that keep it going.</p>
+    <div class="ctas">
+      <a class="btn" href="#contact">Book your brand therapy</a>
+      <a class="btn ghost" href="#hustle">Join the Headshots &amp; Hustle list</a>
+    </div></div>
+    <p class="by">Founded by Tyler Mills, culture broker.<br>Tampa Bay, Miami, Atlanta and New York.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div>
+  <span>Power is personal</span><i>+</i><span>Marketing with access</span><i>+</i><span>Tampa Bay</span><i>+</i><span>Miami</span><i>+</i><span>Atlanta</span><i>+</i><span>New York</span><i>+</i>
+  <span>Power is personal</span><i>+</i><span>Marketing with access</span><i>+</i><span>Tampa Bay</span><i>+</i><span>Miami</span><i>+</i><span>Atlanta</span><i>+</i><span>New York</span><i>+</i>
+</div></div>
+
+<div class="band" style="padding-block:0">
+  <div class="wrap press">
+    <p>As featured in</p>
+    <ul><li class="multi">Voyage Tampa <a href="https://voyagetampa.com/interview/meet-tyler-mills-of-tampafl" target="_blank" rel="noopener" aria-label="Voyage Tampa interview 1">1</a><a href="https://voyagetampa.com/interview/community-highlights-meet-tyler-mills-of-cntrl-creative" target="_blank" rel="noopener" aria-label="Voyage Tampa interview 2">2</a></li><li><a href="https://voyagemia.com/interview/daily-inspiration-meet-tyler-mills" target="_blank" rel="noopener">Voyage Miami</a></li><li><a href="https://voyageatl.com/interview/daily-inspiration-meet-tyler-mills/" target="_blank" rel="noopener">Voyage Atlanta</a></li><li><a href="https://boldjourney.com/meet-tyler-mills/" target="_blank" rel="noopener">Bold Journey</a></li><li><a href="https://canvasrebel.com/meet-tyler-mills-3/" target="_blank" rel="noopener">CanvasRebel</a></li></ul>
+  </div>
+</div>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2>What you can hire us for.</h2>
+      <p>Pick one service or let us run the whole thing. Every engagement is built around where your business is right now and where it is going next.</p>
+    </div>
+    <div class="grid">
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><rect x="11" y="4" width="18" height="32" rx="3"/><path d="M17 31h6"/><path d="M15 12h10M15 17h10M15 22h6"/></svg>
+        <h3>Social media management</h3>
+        <p>Content planning, posting, community management and monthly reporting, so your page stays active, on brand and growing.</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><path d="M6 32V20M14 32V13M22 32V17M30 32V7"/><path d="M4 34h32"/></svg>
+        <h3>Marketing retainers</h3>
+        <p>Monthly strategy and execution across your marketing, run by a team that knows your market. Built for businesses ready for consistency.</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><path d="M20 4l4.5 9.5L35 15l-7.5 7.3L29.3 33 20 28l-9.3 5 1.8-10.7L5 15l10.5-1.5z"/></svg>
+        <h3>Brand activations and events</h3>
+        <p>Launch nights, influencer nights, pop-ups and community events, produced from concept to crowd.</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><path d="M6 16v8h6l12 8V8L12 16z"/><path d="M29 14a8 8 0 0 1 0 12"/></svg>
+        <h3>Campaigns and paid ads</h3>
+        <p>Rollouts and ad campaigns with a clear goal, a clear audience and a clear report at the end.</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><circle cx="14" cy="14" r="6"/><circle cx="28" cy="16" r="5"/><path d="M3 33c1-7 6-11 11-11s10 4 11 11M24 25c5-1 11 2 13 8"/></svg>
+        <h3>Influencer partnerships</h3>
+        <p>The right creators for your brand, briefed, booked and managed, with real relationships behind every introduction.</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="3"/><path d="M15 15h10v10H15zM14 4v4M20 4v4M26 4v4M14 32v4M20 32v4M26 32v4M4 14h4M4 20h4M4 26h4M32 14h4M32 20h4M32 26h4"/></svg>
+        <h3>AI integration and portals</h3>
+        <p>Client portals, booking flows and automations that give your team hours back every week.</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><rect x="4" y="7" width="32" height="24" rx="2"/><path d="M4 13h32M14 36h12M20 31v5"/></svg>
+        <h3>Websites</h3>
+        <p>Clean, fast sites built to bring in business, with upgrades as you grow.</p>
+        <p class="price">Starter sites from $500</p>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="30" rx="2"/><path d="M14 4v5M26 4v5M12 17l3 3 6-6M12 28l3 3 6-6M24 18h5M24 29h5"/></svg>
+        <h3>Project management</h3>
+        <p>We run your launch, event or campaign from kickoff to wrap: timelines, vendors, teams and every detail in between.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band dar" id="dar">
+  <div class="wrap">
+    <div class="head">
+      <h2>The DAR Method.</h2>
+      <p>Every +CNTRL engagement moves through three stages, so you always know where you stand and what comes next. It all starts with brand therapy.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Step 1</b><span>Book your brand therapy</span><small>A focused session on where your brand is and where it should be.</small></li>
+      <li><b>Step 2</b><span>Definition</span><small>We define your strategy, identity and story.</small></li>
+      <li><b>Step 3</b><span>Activation</span><small>We launch it with campaigns, events and press.</small></li>
+      <li><b>Step 4</b><span>Retainer</span><small>We keep it growing month after month.</small></li>
+    </ol>
+    <div class="dar-row">
+      <article class="step"><div class="L">D</div><h3>Definition</h3><p>It starts with a brand therapy session. We dig into your story, your audience and your goals, then build the strategy and identity everything else stands on.</p></article>
+      <article class="step"><div class="L">A</div><h3>Activation</h3><p>Launches, campaigns, rollouts, events and press. Putting your brand in front of the right people.</p></article>
+      <article class="step"><div class="L">R</div><h3>Retainer</h3><p>Long-term growth, partnerships and management. Keeping the momentum going after the launch.</p></article>
+    </div>
+    <div class="dar-foot">
+      <p>Not sure where to start? That is what brand therapy is for. One focused conversation and you leave with a clear next move.</p>
+      <a class="btn" href="#contact">Book your brand therapy</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="portfolio">
+  <div class="wrap">
+    <div class="head">
+      <h2>Rooms we have built.</h2>
+      <p>From national brands entering a new market to local favorites opening their doors. Open any project to see the photos, videos and content behind it.</p>
+    </div>
+    <div class="port" id="port"></div>
+  </div>
+</section>
+<dialog id="dlg" aria-labelledby="dlgT">
+  <div class="dl-head"><div><p class="pc kind" id="dlgK" style="display:block;margin:0;color:var(--redink);font-weight:500;font-size:13px"></p><h3 id="dlgT"></h3><p id="dlgD"></p></div><button class="x" id="dlgX" type="button" aria-label="Close album">&times;</button></div>
+  <div class="album" id="album"></div>
+</dialog>
+<dialog id="lb" aria-label="Photo viewer">
+  <img id="lbImg" alt="">
+  <button class="lbb x2" id="lbX" type="button" aria-label="Close photo">&times;</button>
+  <button class="lbb prev" id="lbP" type="button" aria-label="Previous photo">&#8249;</button>
+  <button class="lbb next" id="lbN" type="button" aria-label="Next photo">&#8250;</button>
+  <p class="lbc" id="lbC"></p>
+</dialog>
+
+<section class="band fitband">
+  <div class="wrap fit">
+    <h2>This is for you if...</h2>
+    <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>You are posting, but nobody is showing up.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Your brand no longer matches the level you are at.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>You are opening something and need the right people in the room.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>You are spending on marketing with no plan behind it.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Your team does by hand what a system could do for them.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>You are ready to be seen, not just be good at what you do.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band hustle" id="hustle">
+  <div class="wrap hustle-in">
+    <div>
+      <h2>Headshots &amp; Hustle 3 <span>Ownership.</span></h2>
+      <p>Tyler's signature entrepreneur mixer is back for its third edition. Fresh headshots, real connections and local vendors, all in one room. This year's theme is taking ownership of your brand.</p>
+      <div class="facts"><b>January 2027</b><b>CoHatch West Tampa</b><b>Past editions: 75 to 100 entrepreneurs</b></div>
+    </div>
+    <form class="card" id="waitlist" name="hustle-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="hustle-waitlist">
+      <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+      <h3>Get on the list.</h3>
+      <p style="margin:0;font-size:15px">Be first to hear when tickets and sponsor spots open.</p>
+      <div><label for="hw-email">Email</label><input id="hw-email" type="email" name="email" required autocomplete="email"></div>
+      <button class="btn red" type="submit">Join the list</button>
+      <p class="msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap about">
+    <div class="frame" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMax slice"><rect width="400" height="500" fill="#ece9e4"/><circle cx="200" cy="190" r="78" fill="#cfcac3"/><path d="M60 500c0-110 62-180 140-180s140 70 140 180z" fill="#cfcac3"/></svg>
+      <span>Working portrait from the brand shoot goes here</span>
+    </div>
+    <div class="about-copy">
+      <h2>Tyler Mills, culture broker.</h2>
+      <p>Tyler is a creative entrepreneur, connector and the founder of +CNTRL. He has built rooms for national brands, local favorites and first-time founders across Tampa Bay, Miami, Atlanta and New York.</p>
+      <p>Funny, real and always working, he is the culture broker you actually want to talk to. His work has been featured in <a href="https://voyagetampa.com/interview/community-highlights-meet-tyler-mills-of-cntrl-creative" target="_blank" rel="noopener">Voyage Tampa</a>, <a href="https://voyagemia.com/interview/daily-inspiration-meet-tyler-mills" target="_blank" rel="noopener">Voyage Miami</a>, <a href="https://voyageatl.com/interview/daily-inspiration-meet-tyler-mills/" target="_blank" rel="noopener">Voyage Atlanta</a>, <a href="https://boldjourney.com/meet-tyler-mills/" target="_blank" rel="noopener">Bold Journey</a> and <a href="https://canvasrebel.com/meet-tyler-mills-3/" target="_blank" rel="noopener">CanvasRebel</a>.</p>
+      <ul class="quick">
+        <li><b>Home base</b>Tampa Bay, Miami, Atlanta and New York</li>
+        <li><b>Known for</b>Building rooms that move brands</li>
+        <li><b>Founder of</b>Headshots &amp; Hustle</li>
+        <li><b>Alum</b>University of South Florida</li>
+      </ul>
+      <p class="mute">Also from Tyler</p>
+      <div class="family"><span>Evolution of Fashion</span><span>Model Evolve</span><span>Headshots &amp; Hustle</span></div>
+      <div class="ctas"><a class="btn ghost" href="#contact">Collaborate with Tyler</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dar" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Let's build something.</h2>
+      <p style="margin-top:18px;font-size:17px;color:var(--mute)">Tell us what you are working on. We reply within two business days with next steps.</p>
+      <dl>
+        <div><dt>Email</dt><dd><a href="mailto:hello@bycntrl.com">hello@bycntrl.com</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+18138294600">813-829-4600</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://instagram.com/bycntrl">@bycntrl</a></dd></div>
+        <div><dt>Based in</dt><dd>Tampa Bay, Miami, Atlanta and New York</dd></div>
+      </dl>
+    </div>
+    <form class="main" id="inquiry" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="inquiry">
+      <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+      <div><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-email">Email</label><input id="f-email" type="email" name="email" required autocomplete="email"></div>
+      <div class="full"><label for="f-biz">Business or brand</label><input id="f-biz" name="business" autocomplete="organization"></div>
+      <div class="full"><label for="f-topic">What are you reaching out about?</label>
+        <select id="f-topic" name="topic" required>
+          <option value="">Choose one</option>
+          <option>Brand therapy session</option>
+          <option>Social media management</option>
+          <option>Marketing retainer</option>
+          <option>Brand activation or event</option>
+          <option>Campaigns and paid ads</option>
+          <option>Influencer partnerships</option>
+          <option>AI integration or a portal</option>
+          <option>Website</option>
+          <option>Project management</option>
+          <option>Collaborate with Tyler</option>
+          <option>Something else</option>
+        </select></div>
+      <div class="full"><label for="f-msg">Tell us more</label><textarea id="f-msg" name="message" required></textarea></div>
+      <div class="full"><button class="btn" type="submit">Send it</button><p class="msg" role="status" style="margin-top:12px"></p></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="band">
+  <div class="wrap foot">
+    <div>
+      <img class="flogo" src="assets/cntrl-primary.png" alt="+CNTRL, Power is personal" width="1200" height="318">
+      <small>&copy; 2026 +CNTRL Creative LLC. All rights reserved.</small>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a><a href="#dar">DAR Method</a><a href="#portfolio">Portfolio</a><a href="#hustle">Events</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://instagram.com/bycntrl">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+{
+  const cam = '<svg viewBox="0 0 40 40"><rect x="4" y="11" width="32" height="22" rx="3"/><circle cx="20" cy="22" r="6"/><path d="M14 11l3-4h6l3 4"/></svg>';
+  const play = '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M17 14l9 6-9 6z"/></svg>';
+  const hh = ['Headshots','Headshots','Headshots','Recap video','The room','Vendors','Networking'];
+  const projects = [
+    {k:'Activation', t:'Slutty Vegan Tampa Influencer Night', ph:Array.from({length:84},(_,n)=>`assets/svb/${n+1}.jpg`), d:"Led the Tampa Influencer Night for Slutty Vegan's Florida market debut."},
+    {k:'Activation', t:'Slutty Vegan x Impossible Foods', d:'Hosted the Atlanta Influencer Night in partnership with Impossible Foods.'},
+    {k:'Inaugural event', t:'Black Med Meet', ph:Array.from({length:74},(_,n)=>`assets/bm3/${n+1}.jpg`), d:"Executive producer of Black Med Meet's inaugural event in Tampa, October 2026."},
+    {k:'Brand activation', t:'Bello Tampa', ph:Array.from({length:97},(_,n)=>`assets/bm/${n+1}.jpg`), d:'Brand activation dinner at Bello Bar + Kitchen in Ybor City.'},
+    {k:'Influencer night', t:"Papi's Tampa", ph:Array.from({length:64},(_,n)=>`assets/pp/${n+1}.jpg`), d:"Influencer night at Papi's Tampa."},
+    {k:'Opening', t:'Fat Tuesday Tampa', type:'video', ig:'https://www.instagram.com/reel/C_LnQjFvZGl/', th:'assets/fat-tuesday-thumb2.jpg', d:'Opening and influencer marketing for Fat Tuesday Tampa.'},
+    {k:'Marketing and digital operations', t:'The Well Tampa', reels:[{url:'https://www.instagram.com/reel/DfPv4qeKyqA/', th:'assets/well-reel.jpg', t:'Welcome to The Well', c:'Directed and produced by +CNTRL &amp; Partners'}], ph:Array.from({length:17},(_,n)=>`assets/wl/${n+1}.jpg`), pos:'center 30%', d:"Ongoing marketing, partnerships and digital operations for The Well Community Wellness Hub. Community health events and vendor partnerships, the student volunteer and clinical program, the WELL PREPARED campaign brand, the Patio @ The Well booking site and the Well Fed Thanksgiving Feast sign-up portal."},
+    {k:'AI and portals', t:'Fight Wright Foundation', type:'link', url:'https://portal.fightwrightfoundation.org', th:'assets/fwf-portal.jpg', demo:'assets/fwf-demo2.mp4', poster:'assets/fwf-demo2.jpg', cta:'Try the live portal', d:"A custom web portal +CNTRL designed, built and runs for the Fight Wright Foundation. It powered the 5th Annual Pumpkins and Pink Ribbons 5K Walk and Festival and now serves as the foundation's year-round community hub.",
+      stats:[['One link','No app to download'],['Live','Walk tracker on event day'],['Managed','Run by +CNTRL monthly']],
+      feats:[['Event sign-ups.','Volunteers, walkers and team leaders register in one form and join a team.'],['Survivor recognition.','Survivors register to be honored on walk day.'],['Welcome back.','Returning supporters pick up where they left off with just their email.'],['Live walk tracker.','Families and supporters follow progress in real time on event day.'],['Sister Circle.','A private members space for survivors, caregivers and family, with its own sign-in.'],['One staff login.','Staff sign in once to manage sign-ups, Sister Circle, care package programs and sponsorships.'],['Email updates.','Shifts, reminders and next year\'s first word go out by email.'],['Works on any phone.','Add it to the home screen for one-tap access.']]},
+    {k:'Brand partnership', t:'Headshots & Health: Florida Blue Cross & Blue Shield', pos:'center 12%', ph:Array.from({length:37},(_,n)=>`assets/fb/${n+1}.jpg`), d:'Brand partnership, influencer marketing and activation events.'},
+    {k:'Signature event', t:'Headshots & Hustle 1', ph:Array.from({length:44},(_,n)=>`assets/hh1b/${n+1}.jpg`), vids:[6,8,2,4].map(n=>`assets/hh1v/c${n}`), cv:'assets/hh1-cover.jpg', d:"The first edition of Tyler's entrepreneur mixer. Fresh headshots, local vendors and real connections."},
+    {k:'Signature event', t:'Headshots & Hustle 2', a:hh, d:'The second edition. More headshots, more vendors and more entrepreneurs in one room.'},
+    {k:'Coming January 2027', t:'Headshots & Hustle 3: Ownership', type:'soon', d:'The third edition lands at CoHatch West Tampa. Get on the list to hear first when tickets and sponsor spots open.'}
+  ];
+  const port = document.getElementById('port');
+  const esc = t => t.replace(/&/g,'&amp;');
+  port.innerHTML = projects.map((p,i)=>{
+    if (p.type==='video') return `<a class="pc vidcard" href="${p.ig}" target="_blank" rel="noopener"><div class="cover vid"><img src="${p.th}" alt="" loading="lazy"><i class="pb"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></i><span class="count">Watch the reel</span></div><span class="kind">${p.k}</span><h3>${esc(p.t)}</h3><p>${p.d}</p><span class="open">Watch on Instagram</span></a>`;
+    if (p.type==='link') return `<button class="pc linkcard vidcard" type="button" data-i="${i}"><div class="cover vid"><img src="${p.th}" alt="" loading="lazy" style="object-position:left top"><i class="pb"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></i><span class="count">Live demo</span></div><span class="kind">${p.k}</span><h3>${esc(p.t)}</h3><p>${p.d}</p><span class="open">Watch the demo</span></button>`;
+    if (p.type==='soon') return `<a class="pc soon" href="#hustle"><div class="cover"><span class="big">H&amp;H 3</span><span class="count">Coming soon</span></div><span class="kind">${p.k}</span><h3>${esc(p.t)}</h3><p>${p.d}</p><span class="open">Get on the list</span></a>`;
+    return `<button class="pc" type="button" data-i="${i}"><div class="cover">${p.ph?`<img src="${p.cv||p.ph[0]}" alt="" loading="lazy"${p.pos?` style="object-position:${p.pos}"`:''}><span class="count">View ${p.ph.length} photos</span>`:`${cam}<span class="count">View album</span>`}</div><span class="kind">${p.k}</span><h3>${esc(p.t)}</h3><p>${p.d}</p><span class="open">Open the album</span></button>`;
+  }).join('');
+  const dlg = document.getElementById('dlg');
+  port.addEventListener('click', e => {
+    const b = e.target.closest('.pc'); if (!b) return;
+    const p = projects[+b.dataset.i];
+    document.getElementById('dlgK').textContent = p.k;
+    document.getElementById('dlgT').textContent = p.t;
+    document.getElementById('dlgD').textContent = p.d;
+    const lab = p.a || ['Photo','Photo','Photo','Event video','Photo','Photo','Photo'];
+    const alb=document.getElementById('album'); alb.className = p.type==='link' ? 'album-demo' : 'album';
+    if (p.type==='link') { const ck='<svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>'; document.getElementById('album').innerHTML = `<div class="demo-wrap"><div><video src="${p.demo}" poster="${p.poster}" controls autoplay muted loop playsinline></video><div class="stats">${p.stats.map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div></div><div><h4>What it does</h4><ul>${p.feats.map(f=>`<li>${ck}<span><b>${f[0]}</b> ${f[1]}</span></li>`).join('')}</ul><a class="btn" href="${p.url}" target="_blank" rel="noopener">${p.cta}</a></div></div>`; if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open',''); return; }
+    document.getElementById('album').innerHTML = (p.reels ? p.reels.map(r => `<a class="rl" href="${r.url}" target="_blank" rel="noopener"><img src="${r.th}" alt=""><i class="pb"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></i><span class="rlc"><b>${r.t}</b>${r.c}. Watch on Instagram</span></a>`).join('') : '') + (p.vids ? p.vids.map(v => `<div class="vd"><video src="${v}.mp4" poster="${v}.jpg" controls playsinline preload="none"></video></div>`).join('') : '') + (p.ph ? p.ph.map((u,n) => `<div class="ph"><img src="${u}" alt="${esc(p.t)} photo ${n+1}" loading="lazy"></div>`).join('') : lab.map(l => `<div>${/video/i.test(l)?play:cam}${l}</div>`).join(''));
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  });
+  document.getElementById('dlgX').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('close', () => document.querySelectorAll('#album video').forEach(v => v.pause()));
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbC = document.getElementById('lbC');
+  let cur = [], ci = 0, curT = '';
+  const show = () => { lbImg.src = cur[ci]; lbImg.alt = `${curT} photo ${ci+1}`; lbC.textContent = `${ci+1} / ${cur.length}`; };
+  const step = d => { ci = (ci + d + cur.length) % cur.length; show(); };
+  document.getElementById('album').addEventListener('click', e => {
+    const im = e.target.closest('.ph img'); if (!im) return;
+    const all = [...document.querySelectorAll('#album .ph img')];
+    cur = all.map(x => x.getAttribute('src')); ci = all.indexOf(im); curT = document.getElementById('dlgT').textContent;
+    show(); lb.showModal ? lb.showModal() : lb.setAttribute('open','');
+  });
+  document.getElementById('lbX').addEventListener('click', () => lb.close());
+  document.getElementById('lbP').addEventListener('click', () => step(-1));
+  document.getElementById('lbN').addEventListener('click', () => step(1));
+  lb.addEventListener('keydown', e => { if (e.key==='ArrowLeft') step(-1); if (e.key==='ArrowRight') step(1); });
+  let tx = null;
+  lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', e => { if (tx===null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1); tx = null; });
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  const intro = document.getElementById('intro');
+  let seen = false;
+  
+  const openDoors = () => {
+    intro.classList.add('open');
+    document.body.classList.remove('locked');
+    try { sessionStorage.setItem('cntrlIn','1'); } catch (e) {}
+    setTimeout(() => { intro.classList.add('gone'); const v=document.getElementById('introVid'); if (v) v.pause(); }, 1500);
+  };
+  if (seen) { intro.classList.add('gone'); }
+  else {
+    document.body.classList.add('locked');
+    document.getElementById('enter').addEventListener('click', openDoors);
+    document.addEventListener('keydown', function k(e){ if (!intro.classList.contains('open') && (e.key==='Enter'||e.key===' ')) { e.preventDefault(); openDoors(); document.removeEventListener('keydown', k); } });
+    document.getElementById('enter').focus();
+  }
+
+  const enc = d => new URLSearchParams(d).toString();
+  for (const f of document.querySelectorAll('form[data-netlify]')) {
+    f.addEventListener('submit', async e => {
+      e.preventDefault();
+      const out = f.querySelector('.msg');
+      const btn = f.querySelector('button[type=submit]');
+      btn.disabled = true;
+      out.textContent = 'Sending...';
+      try {
+        const r = await fetch('/', {method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: enc(new FormData(f))});
+        if (!r.ok) throw new Error(r.status);
+        f.reset();
+        out.textContent = f.id === 'waitlist' ? 'You are on the list. Watch your inbox.' : 'Got it. We will be in touch within two business days.';
+      } catch (err) {
+        out.textContent = 'This is a preview, so nothing was sent. The form goes live once the site is deployed.';
+      }
+      btn.disabled = false;
+    });
+  }
+}
+</script>
+</body>
+</html>
