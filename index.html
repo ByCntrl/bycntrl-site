@@ -173,9 +173,9 @@ dialog::backdrop{background:rgba(10,10,10,.75)}
 .ishade{position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(0,0,0,.55))}
 .icopy{position:relative;height:100%;display:grid;align-content:end;justify-items:center;padding:24px 24px clamp(16px,3.5vh,32px);transition:opacity .5s}
 .icopy img{width:min(640px,80vw);height:auto;filter:drop-shadow(0 4px 24px rgba(0,0,0,.5))}
-.intro .enter{display:inline-flex;align-items:center;gap:12px;padding:6px 22px 6px 6px;border:0;border-radius:999px;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);cursor:pointer;font:500 15px Poppins,sans-serif;color:#fff}
+.intro .enter{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 34px;border:0;border-radius:999px;background:var(--red);cursor:pointer;font:600 15px Poppins,sans-serif;letter-spacing:.12em;color:#fff;box-shadow:0 0 0 0 rgba(232,0,13,.5);animation:pulse 1.8s infinite}
 .intro .enter:focus{outline:none}.intro .enter:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.intro .enter i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-size:20px;box-shadow:0 0 0 0 rgba(232,0,13,.5);animation:pulse 1.8s infinite}
+.intro .enter:active{transform:scale(.97)}
 @keyframes pulse{70%{box-shadow:0 0 0 18px rgba(232,0,13,0)}100%{box-shadow:0 0 0 0 rgba(232,0,13,0)}}
 .intro.open{opacity:0;pointer-events:none}
 .intro.open .iv{transform:scale(1.45)}
@@ -184,7 +184,7 @@ dialog::backdrop{background:rgba(10,10,10,.75)}
 body.locked{overflow:hidden}
 .hero-copy>*{transition:opacity .8s .5s,transform .8s .5s}
 body.locked .hero-copy>*{opacity:0;transform:translateY(24px)}
-@media(prefers-reduced-motion:reduce){.iv,.hero-copy>*{transition:opacity .3s}.intro.open .iv{transform:none}.intro .enter i{animation:none}}
+@media(prefers-reduced-motion:reduce){.iv,.hero-copy>*{transition:opacity .3s}.intro.open .iv{transform:none}.intro .enter{animation:none}}
 .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* fit */
 .fitband{border-top:1px solid var(--line)}
@@ -307,7 +307,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
   <video class="iv" id="introVid" autoplay muted loop playsinline preload="auto" poster="assets/cntrl-door-poster.jpg" src="assets/cntrl-door.mp4"></video>
   <div class="ishade"></div>
   <div class="icopy">
-    <button class="enter" id="enter" type="button"><i>&rarr;</i>Step inside</button>
+    <button class="enter" id="enter" type="button">STEP INSIDE</button>
   </div>
 </div>
 
