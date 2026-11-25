@@ -30,6 +30,8 @@ p{margin:0}
 .logo{font-family:Anton,Impact,sans-serif;font-size:28px;text-decoration:none;letter-spacing:.01em}
 .logo b{color:var(--red);font-weight:400}
 .logo img{display:block;height:30px;width:auto}
+.logo:has(img){display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.logo span{font:700 19px/1 Poppins,sans-serif;letter-spacing:.14em;padding-top:2px}
 .foot .flogo{display:block;width:min(360px,70vw);height:auto;margin-bottom:18px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);font:600 15px Poppins,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .btn:hover{background:transparent;color:var(--ink)}
@@ -311,7 +313,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
 
 <header>
   <div class="nav">
-    <a class="logo" href="#top"><img src="assets/cntrl-wordmark.png" alt="+CNTRL" width="900" height="165"></a>
+    <a class="logo" href="#top" aria-label="+CNTRL Creative"><img src="assets/cntrl-wordmark.png" alt="" width="900" height="165"><span>CREATIVE</span></a>
     <nav aria-label="Main">
       <a href="#services">Services</a>
       <a href="#dar">The DAR Method</a>
