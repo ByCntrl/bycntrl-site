@@ -47,6 +47,21 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 9
 .nav nav a{text-decoration:none;font-weight:500;font-size:15px;padding:8px 0}
 .nav nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--red)}
 .nav .btn{min-height:44px;padding:0 18px}
+.menu-btn,.nav-cta{display:none}
+.menu-btn{width:44px;height:44px;margin-left:auto;border:0;background:none;cursor:pointer;place-content:center;gap:7px;padding:0}
+.menu-btn span{display:block;width:26px;height:2px;background:var(--ink);transition:transform .25s}
+@media(max-width:900px){
+.nav{gap:12px;padding-top:10px;padding-bottom:10px}
+.nav .logo img{height:24px}.nav .logo span{font-size:15px}
+.menu-btn{display:grid}
+.nav>.btn{display:none}
+.nav nav{display:none;position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;flex-wrap:nowrap;gap:0;padding:4px max(5vw,16px) 22px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(0,0,0,.08)}
+header.open .nav nav{display:flex}
+.nav nav a{font-size:18px;padding:15px 0;border-bottom:1px solid var(--line)}
+.nav nav .nav-cta{display:flex;justify-content:center;align-items:center;margin-top:18px;border-bottom:0;font-size:15px;min-height:52px}
+header.open .menu-btn span:first-child{transform:translateY(4.5px) rotate(45deg)}
+header.open .menu-btn span:last-child{transform:translateY(-4.5px) rotate(-45deg)}
+}
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,1fr);min-height:min(80svh,760px);border-bottom:1px solid var(--line)}
 .hero-copy{max-width:1340px;margin:0 auto;width:100%}
@@ -256,9 +271,6 @@ footer{border-top:1px solid var(--line)}
 .steps li:nth-child(3){padding-left:0;border-left:0}
 .feat{grid-template-columns:auto minmax(0,1fr)}
 .feat p,.feat .btn{grid-column:1/-1;justify-self:start}
-.nav{flex-wrap:wrap;gap:10px 16px}
-.nav nav{order:3;width:100%;margin-left:0;gap:4px 18px}
-.nav .btn{margin-left:auto}
 .head{grid-template-columns:minmax(0,1fr)}
 .dar-row,.work,.fit ul{grid-template-columns:minmax(0,1fr)}
 }
@@ -314,12 +326,14 @@ form.main{grid-template-columns:minmax(0,1fr)}
 <header>
   <div class="nav">
     <a class="logo" href="#top" aria-label="+CNTRL Creative"><img src="assets/cntrl-wordmark.png" alt="" width="900" height="165"><span>CREATIVE</span></a>
-    <nav aria-label="Main">
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav"><span></span><span></span></button>
+    <nav aria-label="Main" id="mainnav">
       <a href="#services">Services</a>
       <a href="#dar">The DAR Method</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#hustle">Events</a>
       <a href="#about">About Tyler</a>
+      <a class="btn red nav-cta" href="#contact">START WITH BRAND THERAPY</a>
     </nav>
     <a class="btn red" href="#contact">START WITH BRAND THERAPY</a>
   </div>
@@ -658,6 +672,13 @@ form.main{grid-template-columns:minmax(0,1fr)}
     });
   }
 }
+</script>
+<script>
+(function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-btn');if(!b)return;
+function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+b.addEventListener('click',function(){set(!h.classList.contains('open'))});
+h.querySelectorAll('#mainnav a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});})();
 </script>
 </body>
 </html>
