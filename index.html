@@ -46,11 +46,12 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 9
 .nav nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
 .nav nav a{text-decoration:none;font-weight:500;font-size:15px;padding:8px 0}
 .nav nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--red)}
-.nav .btn{min-height:44px;padding:0 18px}
+.nav .btn{min-height:44px;padding:0 18px;white-space:nowrap}
+.nav nav a{white-space:nowrap}
 .menu-btn,.nav-cta{display:none}
 .menu-btn{width:44px;height:44px;margin-left:auto;border:0;background:none;cursor:pointer;place-content:center;gap:7px;padding:0}
 .menu-btn span{display:block;width:26px;height:2px;background:var(--ink);transition:transform .25s}
-@media(max-width:900px){
+@media(max-width:1199px){
 .nav{gap:12px;padding-top:10px;padding-bottom:10px}
 .nav .logo img{height:24px}.nav .logo span{font-size:15px}
 .menu-btn{display:grid}
@@ -311,6 +312,33 @@ form.main{grid-template-columns:minmax(0,1fr)}
 .album a.rl .rlc{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:14px;text-align:left}
 .album a.rl .rlc b{display:block;font:600 20px Poppins,sans-serif;margin-bottom:2px}
 .album a.rl ~ div:first-of-type{grid-column:auto;grid-row:auto}
+
+/* brand therapy */
+.bt{border-top:1px solid var(--ink)}
+.bt-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px 72px;align-items:start}
+.bt-intro h2{margin-bottom:20px}
+.bt-intro>p{color:var(--mute);font-size:17px;max-width:30em}
+.bt-facts{list-style:none;margin:28px 0 32px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+.bt-facts li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:2px}
+.bt-facts li:nth-child(2n){padding-left:20px;border-left:1px solid var(--line)}
+.bt-facts b{font-size:13px;font-weight:600;color:var(--redink);letter-spacing:.04em}
+.bt-facts span{font-weight:600;font-size:17px}
+.bt-cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center}
+.bt-cta small{color:var(--mute);font-size:14px}
+.bt-cta small a{color:var(--ink)}
+.bt-steps{list-style:none;margin:0;padding:0;counter-reset:bt;border-top:1px solid var(--ink)}
+.bt-steps li{counter-increment:bt;display:grid;grid-template-columns:72px minmax(0,1fr);gap:4px 20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.bt-steps li::before{content:counter(bt,decimal-leading-zero);grid-row:span 2;font-family:Anton,Impact,sans-serif;font-size:44px;line-height:1;color:var(--red)}
+.bt-steps h3{font-size:22px}
+.bt-steps p{color:var(--mute)}
+.bt-book{background:var(--soft);padding:clamp(28px,4vw,48px);display:grid;gap:14px;justify-items:start}
+.bt-book .ph{width:100%;min-height:320px;border:1px dashed #b9b3ab;display:grid;place-items:center;text-align:center;color:var(--mute);padding:24px;background:var(--bg)}
+.bt-faq{display:grid;gap:0;border-top:1px solid var(--ink)}
+.bt-faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.bt-faq summary{font-weight:600;font-size:17px;cursor:pointer}
+.bt-faq p{color:var(--mute);margin-top:10px;max-width:46em}
+@media(max-width:900px){.bt-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.bt-steps li{grid-template-columns:52px minmax(0,1fr)}.bt-steps li::before{font-size:34px}}
 </style>
 </head>
 <body>
@@ -333,9 +361,9 @@ form.main{grid-template-columns:minmax(0,1fr)}
       <a href="#portfolio">Portfolio</a>
       <a href="#hustle">Events</a>
       <a href="#about">About Tyler</a>
-      <a class="btn red nav-cta" href="#contact">START WITH BRAND THERAPY</a>
+      <a class="btn red nav-cta" href="/brand-therapy/">START WITH BRAND THERAPY</a>
     </nav>
-    <a class="btn red" href="#contact">START WITH BRAND THERAPY</a>
+    <a class="btn red" href="/brand-therapy/">START WITH BRAND THERAPY</a>
   </div>
 </header>
 
@@ -347,7 +375,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
     <div class="hero-row"><div>
     <p class="lead">+CNTRL is a culture brokerage. We connect brands with the people, rooms and moments that move them, then build the systems that keep it going.</p>
     <div class="ctas">
-      <a class="btn" href="#contact">START WITH BRAND THERAPY</a>
+      <a class="btn" href="/brand-therapy/">START WITH BRAND THERAPY</a>
       <a class="btn ghost" href="#hustle">Join the Headshots &amp; Hustle list</a>
     </div></div>
     <p class="by">Founded by Tyler Mills, culture broker.<br>Tampa Bay, Miami, Atlanta and New York.</p>
@@ -419,26 +447,52 @@ form.main{grid-template-columns:minmax(0,1fr)}
   </div>
 </section>
 
+<section class="band bt" id="brand-therapy">
+  <div class="wrap bt-grid">
+    <div class="bt-intro">
+      <h2>Brand Therapy.</h2>
+      <p>A private, founder-led strategy session with Tyler Mills. Bring your brand, your goals and what is holding you back. Leave with clarity, a direction and a plan you can act on.</p>
+      <ul class="bt-facts">
+        <li><b>Investment</b><span>$99</span></li>
+        <li><b>Session</b><span>60 minutes</span></li>
+        <li><b>Format</b><span>Virtual, one on one</span></li>
+        <li><b>Strategist</b><span>Tyler Mills</span></li>
+      </ul>
+      <div class="bt-cta">
+        <a class="btn red" href="/brand-therapy/">BOOK BRAND THERAPY</a>
+        <small>Ready to hire +CNTRL? <a href="#contact">Book a free intro call.</a></small>
+      </div>
+    </div>
+    <ol class="bt-steps">
+      <li><h3>Book &amp; Pay</h3><p>Choose a time that works for you and pay upfront to hold your spot.</p></li>
+      <li><h3>Brand Intake</h3><p>A short questionnaire about your brand, your goals and your challenges, so the session starts on what matters.</p></li>
+      <li><h3>Brand Therapy</h3><p>Your private, one-on-one virtual strategy session with Tyler.</p></li>
+      <li><h3>Brand Dose</h3><p>A one-page action plan with strategic recommendations, growth opportunities and immediate next steps, delivered within two business days.</p></li>
+      <li><h3>Follow-up</h3><p>Ready for more? Explore an ongoing Marketing Partnership with +CNTRL.</p></li>
+    </ol>
+  </div>
+</section>
+
 <section class="band dar" id="dar">
   <div class="wrap">
     <div class="head">
       <h2>The DAR Method.</h2>
-      <p>Every +CNTRL engagement moves through three stages, so you always know where you stand and what comes next. It all starts with brand therapy.</p>
+      <p>Every +CNTRL engagement moves through three stages: Define, Activate, Retain. You always know where you stand and what comes next. It all starts with Brand Therapy.</p>
     </div>
     <ol class="steps">
-      <li><b>Step 1</b><span>Start with brand therapy</span><small>A focused session on where your brand is and where it should be.</small></li>
-      <li><b>Step 2</b><span>Definition</span><small>We define your strategy, identity and story.</small></li>
-      <li><b>Step 3</b><span>Activation</span><small>We launch it with campaigns, events and press.</small></li>
-      <li><b>Step 4</b><span>Retainer</span><small>We keep it growing month after month.</small></li>
+      <li><b>Step 1</b><span>Brand Therapy</span><small>A private strategy session on where your brand is and where it should be.</small></li>
+      <li><b>Step 2</b><span>Brand Dose</span><small>Your one-page action plan and immediate next steps.</small></li>
+      <li><b>Step 3</b><span>Activate</span><small>We launch it with campaigns, events and press.</small></li>
+      <li><b>Step 4</b><span>Retain</span><small>We keep it growing month after month.</small></li>
     </ol>
     <div class="dar-row">
-      <article class="step"><div class="L">D</div><h3>Definition</h3><p>It starts with a brand therapy session. We dig into your story, your audience and your goals, then build the strategy and identity everything else stands on.</p></article>
-      <article class="step"><div class="L">A</div><h3>Activation</h3><p>Launches, campaigns, rollouts, events and press. Putting your brand in front of the right people.</p></article>
-      <article class="step"><div class="L">R</div><h3>Retainer</h3><p>Long-term growth, partnerships and management. Keeping the momentum going after the launch.</p></article>
+      <article class="step"><div class="L">D</div><h3>Define</h3><p>It starts with Brand Therapy. We dig into your story, your audience and your goals, then hand you a Brand Dose: the strategy and next steps everything else stands on.</p></article>
+      <article class="step"><div class="L">A</div><h3>Activate</h3><p>Launches, campaigns, rollouts, events and press. Putting your brand in front of the right people.</p></article>
+      <article class="step"><div class="L">R</div><h3>Retain</h3><p>Long-term growth, partnerships and management. Keeping the momentum going after the launch.</p></article>
     </div>
     <div class="dar-foot">
-      <p>Not sure where to start? That is what brand therapy is for. One focused conversation and you leave with a clear next move.</p>
-      <a class="btn" href="#contact">START WITH BRAND THERAPY</a>
+      <p>Not sure where to start? That is what Brand Therapy is for. One focused session and you leave with a clear next move.</p>
+      <a class="btn" href="/brand-therapy/">START WITH BRAND THERAPY</a>
     </div>
   </div>
 </section>
@@ -524,7 +578,9 @@ form.main{grid-template-columns:minmax(0,1fr)}
   <div class="wrap contact">
     <div>
       <h2>Let's build something.</h2>
-      <p style="margin-top:18px;font-size:17px;color:var(--mute)">Tell us what you are working on. We reply within two business days with next steps.</p>
+      <p style="margin-top:18px;font-size:17px;color:var(--mute)">Ready to hire +CNTRL? Book a free intro call, or tell us what you are working on and we will reply within two business days.</p>
+      <p style="margin-top:20px"><a class="btn red" href="#inquiry" data-topic="Free intro call">BOOK A FREE INTRO CALL</a></p>
+      <p style="margin-top:14px;font-size:14px;color:var(--mute)">Looking for Brand Therapy? <a href="/brand-therapy/" style="color:var(--ink)">Book it here.</a></p>
       <dl>
         <div><dt>Email</dt><dd><a href="mailto:hello@bycntrl.com">hello@bycntrl.com</a></dd></div>
         <div><dt>Phone</dt><dd><a href="tel:+18138294600">813-829-4600</a></dd></div>
@@ -541,7 +597,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
       <div class="full"><label for="f-topic">What are you reaching out about?</label>
         <select id="f-topic" name="topic" required>
           <option value="">Choose one</option>
-          <option>Brand therapy session</option>
+          <option>Free intro call</option>
           <option>Social media management</option>
           <option>Marketing retainer</option>
           <option>Brand activation or event</option>
@@ -568,7 +624,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
       <small>&copy; 2026 +CNTRL Creative LLC. All rights reserved.</small>
     </div>
     <nav aria-label="Footer">
-      <a href="#services">Services</a><a href="#dar">DAR Method</a><a href="#portfolio">Portfolio</a><a href="#hustle">Events</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://instagram.com/bycntrl">Instagram</a>
+      <a href="#services">Services</a><a href="/brand-therapy/">Brand Therapy</a><a href="#dar">DAR Method</a><a href="#portfolio">Portfolio</a><a href="#hustle">Events</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://instagram.com/bycntrl">Instagram</a>
     </nav>
   </div>
 </footer>
@@ -679,6 +735,9 @@ function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b
 b.addEventListener('click',function(){set(!h.classList.contains('open'))});
 h.querySelectorAll('#mainnav a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});})();
+</script>
+<script>
+document.querySelectorAll('a[data-topic]').forEach(function(a){a.addEventListener('click',function(){var s=document.getElementById('f-topic');if(s)s.value=a.dataset.topic;});});
 </script>
 </body>
 </html>
