@@ -340,6 +340,8 @@ form.main{grid-template-columns:minmax(0,1fr)}
 @media(max-width:900px){.bt-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.bt-steps li{grid-template-columns:52px minmax(0,1fr)}.bt-steps li::before{font-size:34px}}
 </style>
+<script>try{if(sessionStorage.getItem("cntrlIn")==="1")document.documentElement.classList.add("seen")}catch(e){}</script>
+<style>html.seen .intro{display:none}</style>
 </head>
 <body>
 
@@ -459,7 +461,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
         <li><b>Strategist</b><span>Tyler Mills</span></li>
       </ul>
       <div class="bt-cta">
-        <a class="btn red" href="/brand-therapy/">BOOK BRAND THERAPY</a>
+        <a class="btn red" href="https://app.squareup.com/appointments/buyer/widget/vr5wjjorrjfpyc/LAW8Y3VTFPY3C" target="_blank" rel="noopener">BOOK BRAND THERAPY</a>
         <small>Ready to hire +CNTRL? <a href="https://app.squareup.com/appointments/buyer/widget/b3cxct14gv7m00/LAW8Y3VTFPY3C" target="_blank" rel="noopener">Book a free intro call.</a></small>
       </div>
     </div>
@@ -693,7 +695,7 @@ form.main{grid-template-columns:minmax(0,1fr)}
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 
   const intro = document.getElementById('intro');
-  let seen = false;
+  let seen = document.documentElement.classList.contains('seen');
   
   const openDoors = () => {
     intro.classList.add('open');
